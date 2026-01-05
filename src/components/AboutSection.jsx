@@ -1,4 +1,4 @@
-import { Boxes, Braces, Database } from "lucide-react";
+import { Boxes, Braces } from "lucide-react";
 
 export const AboutSection = () => {
   return (
@@ -15,17 +15,15 @@ export const AboutSection = () => {
             </h3>
 
             <p className="text-muted-foreground">
-              Soy estudiante de Ingeniería Informática en el ITBA, con interés en
-              el desarrollo de software y el procesamiento de datos. Me enfoco en
-              adquirir bases técnicas sólidas a través de proyectos académicos y
-              práctica constante.
+              Soy estudiante de Ingeniería Informática en el ITBA, con interés
+              en el desarrollo de software. Me enfoco en adquirir bases técnicas
+              sólidas a través de proyectos académicos y práctica constante.
             </p>
 
             <p className="text-muted-foreground">
               Tengo experiencia en programación orientada a objetos utilizando
               Java, así como en el desarrollo de aplicaciones con JavaScript,
-              Node.js y React, aplicando conceptos de diseño, modularidad y
-              buenas prácticas de programación.
+              Node.js y React.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
@@ -75,24 +73,6 @@ export const AboutSection = () => {
                     Desarrollo de aplicaciones utilizando JavaScript, Node.js y
                     React, enfocándome en la estructura del código y la
                     interacción entre frontend y backend.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="gradient-border p-6 card-hover">
-              <div className="flex items-start gap-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Database className="h-6 w-6 text-primary" />
-                </div>
-                <div className="text-left">
-                  <h4 className="font-semibold text-lg">
-                    Procesamiento de Datos
-                  </h4>
-                  <p className="text-muted-foreground">
-                    Trabajo con datos estructurados en archivos CSV y XML,
-                    implementando soluciones para su lectura, validación y
-                    procesamiento eficiente.
                   </p>
                 </div>
               </div>
