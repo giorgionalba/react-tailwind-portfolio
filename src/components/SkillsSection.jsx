@@ -16,7 +16,6 @@ const skills = [
   // Datos
   { name: "Procesamiento de datos CSV", category: "datos" },
   { name: "Manejo de documentos XML", category: "datos" },
-  { name: "MongoDB", category: "datos" },
   { name: "PostgreSQL", category: "datos" },
 
   // Herramientas

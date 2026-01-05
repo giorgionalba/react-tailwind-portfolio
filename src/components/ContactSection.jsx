@@ -1,26 +1,38 @@
-import {
-  Linkedin,
-  Mail,
-  MapPin,
-  Phone,
-  Send,
-} from "lucide-react";
+import { Linkedin, Mail, MapPin, Phone, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 export const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const form = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     setIsSubmitting(true);
 
-    // Simulación simple de envío
-    setTimeout(() => {
-      setIsSubmitting(false);
-      e.target.reset();
-    }, 1200);
+    // Reemplaza estos valores con los tuyos de EmailJS
+    // Service ID, Template ID, Public Key
+    emailjs
+      .sendForm(
+        "service_th34jfr",
+        "template_tco72qp",
+        form.current,
+        "PnEbBECdR-8UxcqAV"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert("Mensaje enviado con éxito!");
+          setIsSubmitting(false);
+          e.target.reset();
+        },
+        (error) => {
+          console.log(error.text);
+          alert("Hubo un error al enviar el mensaje, intenta nuevamente.");
+          setIsSubmitting(false);
+        }
+      );
   };
 
   return (
@@ -104,11 +116,9 @@ export const ContactSection = () => {
 
           {/* Formulario */}
           <div className="bg-card p-8 rounded-lg shadow-xs">
-            <h3 className="text-2xl font-semibold mb-6">
-              Enviar un mensaje
-            </h3>
+            <h3 className="text-2xl font-semibold mb-6">Enviar un mensaje</h3>
 
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form ref={form} className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label
                   htmlFor="name"
